@@ -16,12 +16,14 @@ public class PostController {
     private PostService postService;
 
     @RequestMapping("/post")
-    public List<String> getPostList() {
+    public List<Post> getPostList() {
+
         return postService.getPosts();
     }
 
     @RequestMapping(value = "/post/add")
-    public void addPost(@RequestParam("title") String title) {
-        postService.addPost(title);
+    public void addPost(@RequestParam("title") Post post) {
+
+        postService.addPost(post);
     }
 }
